@@ -1,0 +1,30 @@
+To see the live view in app follow the below steps:
+clone the repo in orange pi
+Install obs in orange pi
+
+
+Stream URL : rtmp://a.rtmp.youtube.com/live2
+Stream Key : g240-uxx1-x6qb-f0qs-4h7m
+(Obtained frmo the YT studio of your profile)
+
+open obs
+click settings option in the bottom right
+click on stream option in the left nav menu(see image in obs folder for reference)
+click on use stream key advance option
+than put the stream key above mentioned and save it
+
+FYI we using python 3 version
+run the main.py file using python main.py (any package no found please install them)
+it will open a new detection window of camera.
+now go to obs on media source click on plus sign and select window capture
+now select the new detection window and click create broadcast and stream(make sure you select privacy as unlisted for security feature)
+
+now it will stream on yt studio the stream.
+copy the id yt stream link and save it in the env. variables on vercel under the name stream_key and redplot the server.
+for exampple if the video link is : https://www.youtube.com/watch?v=YjvYmi_4eBo&ab_channel=SOULVipeR
+than the id is YjvYmi_4eBo
+
+*******************************
+on running main.py that file every 4hr(passed 14400s in the argument check) will save the detected image and its label.txt in the test-mode folder if it detects any symptom.
+now every 4 hrthe py script sendNotification.py will run which will check the latest image and .txt file in the test-model folder and sned the notification if any to user and arduino
+arduino code is in progress

@@ -1,0 +1,18 @@
+To run the send_notification.py Python script every 4 hours, you can use the built-in task scheduler for Unix-based systems called cron.
+
+Here is a step-by-step guide on how to do it:
+
+Open the terminal.
+
+Type crontab -e to open the cron table for editing.
+
+This will open the crontab file in your default text editor. Add the following line at the end of the file:
+
+0 */4 * * * /usr/bin/python3 /path/to/your/send_notification.py
+In this line:
+
+0 */4 * * * means the task will run every 4 hours.
+/usr/bin/python3 is the path to the Python interpreter. You can find the path by running which python3 in the terminal.
+/path/to/your/script.py is the path to the Python script you want to run.
+Save and close the file. Your cron job is now set up.
+Note: Cron uses the system's local time. If your system is using UTC, the job will run according to UTC.
